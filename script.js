@@ -1,48 +1,52 @@
-const display = document.getElementById('display');
-const clearButton = document.getElementById('clear');
-const backspaceButton = document.getElementById('backspace');
-const equalsButton = document.getElementById('equals');
-const addButton = document.getElementById('add');
-const subtractButton = document.getElementById('subtract');
-const multiplyButton = document.getElementById('multiply');
-const divideButton = document.getElementById('divide');
-const numberButtons = document.querySelectorAll('#zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine');
+// ... existing code ...
 
-let currentNumber = '';
-let previousNumber = '';
-let operation = '';
-
-numberButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        currentNumber += button.textContent;
-        display.value = currentNumber;
-    });
+// Trigonometric Functions
+document.getElementById('sin').addEventListener('click', () => {
+    currentNumber = Math.sin(parseFloat(currentNumber)).toString();
+    display.value = currentNumber;
 });
 
-addButton.addEventListener('click', () => {
+document.getElementById('cos').addEventListener('click', () => {
+    currentNumber = Math.cos(parseFloat(currentNumber)).toString();
+    display.value = currentNumber;
+});
+
+document.getElementById('tan').addEventListener('click', () => {
+    currentNumber = Math.tan(parseFloat(currentNumber)).toString();
+    display.value = currentNumber;
+});
+
+// Logarithm Function
+document.getElementById('log').addEventListener('click', () => {
+    currentNumber = Math.log(parseFloat(currentNumber)).toString();
+    display.value = currentNumber;
+});
+
+// Square Root Function
+document.getElementById('sqrt').addEventListener('click', () => {
+    currentNumber = Math.sqrt(parseFloat(currentNumber)).toString();
+    display.value = currentNumber;
+});
+
+// Power Function
+document.getElementById('power').addEventListener('click', () => {
     previousNumber = currentNumber;
-    operation = 'add';
+    operation = 'power';
     currentNumber = '';
 });
 
-subtractButton.addEventListener('click', () => {
-    previousNumber = currentNumber;
-    operation = 'subtract';
-    currentNumber = '';
+// Special Constants
+document.getElementById('pi').addEventListener('click', () => {
+    currentNumber += Math.PI.toString();
+    display.value = currentNumber;
 });
 
-multiplyButton.addEventListener('click', () => {
-    previousNumber = currentNumber;
-    operation = 'multiply';
-    currentNumber = '';
+document.getElementById('e').addEventListener('click', () => {
+    currentNumber += Math.E.toString();
+    display.value = currentNumber;
 });
 
-divideButton.addEventListener('click', () => {
-    previousNumber = currentNumber;
-    operation = 'divide';
-    currentNumber = '';
-});
-
+// Update equalsButton event listener to handle power operation
 equalsButton.addEventListener('click', () => {
     let result;
     switch (operation) {
@@ -58,6 +62,9 @@ equalsButton.addEventListener('click', () => {
         case 'divide':
             result = parseFloat(previousNumber) / parseFloat(currentNumber);
             break;
+        case 'power':
+            result = Math.pow(parseFloat(previousNumber), parseFloat(currentNumber));
+            break;
         default:
             result = 0;
     }
@@ -65,16 +72,4 @@ equalsButton.addEventListener('click', () => {
     currentNumber = result.toString();
     previousNumber = '';
     operation = '';
-});
-
-clearButton.addEventListener('click', () => {
-    display.value = '';
-    currentNumber = '';
-    previousNumber = '';
-    operation = '';
-});
-
-backspaceButton.addEventListener('click', () => {
-    currentNumber = currentNumber.slice(0, -1);
-    display.value = currentNumber;
 });
