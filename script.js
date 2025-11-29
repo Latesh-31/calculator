@@ -1,77 +1,40 @@
-let display = document.getElementById('display');
-let equals = document.getElementById('equals');
-let clear = document.getElementById('clear');
-let backspace = document.getElementById('backspace');
-let numbers = document.querySelectorAll('.buttons button');
+const display = document.getElementById('display');
+const keys = document.querySelectorAll('button');
 let currentNumber = '';
 let previousNumber = '';
-let operator = '';
+let operator = null;
 
-numbers.forEach(button => {
-    button.addEventListener('click', () => {
-        currentNumber += button.textContent;
-        display.value = currentNumber;
+keys.forEach(key => {
+    key.addEventListener('click', () => {
+        const keyValue = key.textContent;
+        if (keyValue === 'C') {
+            currentNumber = '';
+            previousNumber = '';
+            operator = null;
+            display.value = '';
+        } else if (keyValue === 'DEL') {
+            currentNumber = currentNumber.slice(0, -1);
+            display.value = currentNumber;
+        } else if (keyValue === '=') {
+            if (operator === '+') {
+                display.value = parseFloat(previousNumber) + parseFloat(currentNumber);
+            } else if (operator === '-') {
+                display.value = parseFloat(previousNumber) - parseFloat(currentNumber);
+            } else if (operator === '*') {
+                display.value = parseFloat(previousNumber) * parseFloat(currentNumber);
+            } else if (operator === '/') {
+                display.value = parseFloat(previousNumber) / parseFloat(currentNumber);
+            }
+            currentNumber = display.value;
+            previousNumber = '';
+            operator = null;
+        } else if (keyValue === '+' || keyValue === '-' || keyValue === '*' || keyValue === '/') {
+            operator = keyValue;
+            previousNumber = currentNumber;
+            currentNumber = '';
+        } else {
+            currentNumber += keyValue;
+            display.value = currentNumber;
+        }
     });
-});
-
-equals.addEventListener('click', () => {
-    calculate();
-});
-
-function calculate() {
-    let result;
-    switch (operator) {
-        case '+':
-            result = parseFloat(previousNumber) + parseFloat(currentNumber);
-            break;
-        case '-':
-            result = parseFloat(previousNumber) - parseFloat(currentNumber);
-            break;
-        case '*':
-            result = parseFloat(previousNumber) * parseFloat(currentNumber);
-            break;
-        case '/':
-            result = parseFloat(previousNumber) / parseFloat(currentNumber);
-            break;
-        default:
-            result = 0;
-    }
-    display.value = result;
-    previousNumber = '';
-    currentNumber = '';
-}
-
-clear.addEventListener('click', () => {
-    display.value = '';
-    currentNumber = '';
-    previousNumber = '';
-});
-
-backspace.addEventListener('click', () => {
-    currentNumber = currentNumber.slice(0, -1);
-    display.value = currentNumber;
-});
-
-document.getElementById('add').addEventListener('click', () => {
-    previousNumber = currentNumber;
-    operator = '+';
-    currentNumber = '';
-});
-
-document.getElementById('subtract').addEventListener('click', () => {
-    previousNumber = currentNumber;
-    operator = '-';
-    currentNumber = '';
-});
-
-document.getElementById('multiply').addEventListener('click', () => {
-    previousNumber = currentNumber;
-    operator = '*';
-    currentNumber = '';
-});
-
-document.getElementById('divide').addEventListener('click', () => {
-    previousNumber = currentNumber;
-    operator = '/';
-    currentNumber = '';
 });
