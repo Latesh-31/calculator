@@ -1,23 +1,24 @@
 .calculator-container {
-    width: 300px;
+    width: 320px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #000000;
+    background-color: #2d2d2d;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .large-display {
     width: 100%;
-    height: 70px;
+    height: 80px;
     margin-bottom: 20px;
     padding: 10px;
-    font-size: 28px;
+    font-size: 32px;
     text-align: right;
     border: none;
     border-radius: 15px;
-    background-color: #f9f9f9;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #444444;
+    color: #ffffff;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .buttons {
@@ -27,25 +28,26 @@
 }
 
 button {
-    height: 50px;
+    height: 60px;
     padding: 10px;
-    font-size: 20px;
+    font-size: 22px;
     border: none;
-    border-radius: 25px;
-    background-color: #4caf50;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #555555, #444444);
     color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .orange-button {
-    background-color: #ff9800;
+    background: linear-gradient(to bottom, #ff9800, #f57c00);
 }
 
 .dark-gray-button {
-    background-color: #607d8b;
+    background: linear-gradient(to bottom, #607d8b, #546e7a);
 }
 
 button:hover {
-    background-color: #3e8e41;
+    background: linear-gradient(to bottom, #666666, #555555);
 }
