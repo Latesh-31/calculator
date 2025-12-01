@@ -2,9 +2,9 @@
     width: 320px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #2d2d2d;
+    background-color: #f0ead6; /* Light beige */
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
 }
 
 .large-display {
@@ -16,9 +16,9 @@
     text-align: right;
     border: none;
     border-radius: 15px;
-    background-color: #444444;
-    color: #ffffff;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    background-color: #e8daba; /* Lighter beige */
+    color: #333333; /* Darker text for contrast */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Softer inner shadow */
 }
 
 .buttons {
@@ -32,22 +32,24 @@ button {
     padding: 10px;
     font-size: 22px;
     border: none;
-    border-radius: 10px;
-    background: linear-gradient(to bottom, #555555, #444444);
-    color: #ffffff;
+    border-radius: 12px; /* More rounded corners */
+    background: linear-gradient(to bottom, #c8e6c9, #a5d6a7); /* Light green gradient */
+    color: #333333; /* Darker text for contrast */
     cursor: pointer;
     transition: background-color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Softer shadow */
 }
 
 .orange-button {
-    background: linear-gradient(to bottom, #ff9800, #f57c00);
+    background: linear-gradient(to bottom, #ffcc80, #ffb74d); /* Light orange */
+    color: #333333;
 }
 
 .dark-gray-button {
-    background: linear-gradient(to bottom, #607d8b, #546e7a);
+    background: linear-gradient(to bottom, #b0bec5, #90a4ae); /* Light gray-blue */
+    color: #333333;
 }
 
 button:hover {
-    background: linear-gradient(to bottom, #666666, #555555);
+    background: linear-gradient(to bottom, #b2dfdb, #80cbc4); /* Teal on hover */
 }
