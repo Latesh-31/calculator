@@ -2,9 +2,84 @@
     width: 320px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #f0ead6; /* Light beige */
+    background-color: #f0ead6;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+body {
+    background-color: #fff; /* Default light theme background */
+    color: #333; /* Default light theme text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.theme-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.theme-toggle input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.theme-toggle label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 50px;
+    height: 25px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.theme-toggle label:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 21px;
+    height: 21px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+.theme-toggle input:checked + label {
+    background: #bada55;
+}
+
+.theme-toggle input:checked + label:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+}
+
+.history-display {
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    color: #555;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme .history-display {
+    background-color: #444;
+    color: #ddd;
+    border-color: #555;
 }
 
 .large-display {
@@ -16,9 +91,16 @@
     text-align: right;
     border: none;
     border-radius: 15px;
-    background-color: #e8daba; /* Lighter beige */
-    color: #333333; /* Darker text for contrast */
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Softer inner shadow */
+    background-color: #e8daba;
+    color: #333333;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme .large-display {
+    background-color: #555;
+    color: #eee;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
 }
 
 .buttons {
@@ -32,24 +114,44 @@ button {
     padding: 10px;
     font-size: 22px;
     border: none;
-    border-radius: 12px; /* More rounded corners */
-    background: linear-gradient(to bottom, #c8e6c9, #a5d6a7); /* Light green gradient */
-    color: #333333; /* Darker text for contrast */
+    border-radius: 12px;
+    background-color: #eee;
+    color: #333;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.orange-button {
-    background: linear-gradient(to bottom, #ffcc80, #ffb74d); /* Light orange */
-    color: #333333;
+body.dark-theme button {
+    background-color: #777;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
-.dark-gray-button {
-    background: linear-gradient(to bottom, #b0bec5, #90a4ae); /* Light gray-blue */
-    color: #333333;
+.operator-button {
+    background-color: #f9a825;
+    color: #fff;
+}
+
+body.dark-theme .operator-button {
+    background-color: #ffa726;
+    color: #222;
 }
 
 button:hover {
-    background: linear-gradient(to bottom, #b2dfdb, #80cbc4); /* Teal on hover */
+    background-color: #ddd;
+}
+
+body.dark-theme button:hover {
+    background-color: #999;
+}
+
+.number-button {
+    background-color: #fff;
+    color: #333;
+}
+
+body.dark-theme .number-button {
+    background-color: #888;
+    color: #fff;
 }
