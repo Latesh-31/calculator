@@ -8,38 +8,34 @@
 </head>
 <body>
     <div class="calculator-container">
-        <div class="theme-toggle">
-            <input type="checkbox" id="theme-switcher">
-            <label for="theme-switcher"></label>
-        </div>
-        <div id="history" class="history-display"></div>
-        <input type="text" id="display" disabled placeholder="0" class="large-display">
+        <div id="display" class="display">0</div>
+        <div class="expression-display"></div>
         <div class="buttons">
             <button id="clear">C</button>
-            <button id="backspace">DEL</button>
-            <button id="equals">=</button>
-            <button id="add" class="operator-button">+</button>
-            <button id="subtract" class="operator-button">-</button>
-            <button id="multiply" class="operator-button">*</button>
+            <button id="backspace">&#x232B;</button>
             <button id="divide" class="operator-button">/</button>
-            <button id="sin">sin</button>
-            <button id="cos">cos</button>
-            <button id="tan">tan</button>
-            <button id="log">log</button>
-            <button id="sqrt">√</button>
-            <button id="power">^</button>
-            <button id="pi">π</button>
-            <button id="e">e</button>
-            <button id="zero" class="number-button">0</button>
-            <button id="one" class="number-button">1</button>
-            <button id="two" class="number-button">2</button>
-            <button id="three" class="number-button">3</button>
-            <button id="four" class="number-button">4</button>
-            <button id="five" class="number-button">5</button>
-            <button id="six" class="number-button">6</button>
+            <button id="multiply" class="operator-button">*</button>
+
             <button id="seven" class="number-button">7</button>
             <button id="eight" class="number-button">8</button>
             <button id="nine" class="number-button">9</button>
+            <button id="subtract" class="operator-button">-</button>
+
+            <button id="four" class="number-button">4</button>
+            <button id="five" class="number-button">5</button>
+            <button id="six" class="number-button">6</button>
+            <button id="add" class="operator-button">+</button>
+
+            <button id="one" class="number-button">1</button>
+            <button id="two" class="number-button">2</button>
+            <button id="three" class="number-button">3</button>
+            <button id="equals" class="operator-button">=</button>
+
+            <button id="power">^</button>
+            <button id="zero" class="number-button">0</button>
+            <button id="decimal" class="number-button">.</button>
+            <button id="ans">Ans</button>
+
         </div>
     </div>
     <script src="script.js"></script>
