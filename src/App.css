@@ -25,7 +25,7 @@ body {
 }
 
 .calculator {
-  width: 320px;
+  width: 360px; /* Increased width for more buttons */
   padding: 20px;
   border-radius: 20px;
   background-color: var(--calc-bg);
@@ -76,12 +76,12 @@ body {
 }
 
 .buttons button {
-  height: 50px;
+  height: 48px; /* Slightly smaller height */
   border: none;
   border-radius: 10px;
   background: var(--btn-number-bg);
   box-shadow: 0 3px 5px var(--btn-number-shadow);
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Slightly smaller font */
   font-weight: 500;
   color: var(--btn-text-color);
   cursor: pointer;
@@ -103,5 +103,8 @@ body {
 
 .btn-equals {
     background-color: var(--btn-special-bg);
+}
+
+.btn-zero {
     grid-column: span 2;
 }
